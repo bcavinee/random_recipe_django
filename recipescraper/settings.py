@@ -28,7 +28,7 @@ SECRET_KEY= config('SECRET_KEY')
 DEBUG = os.environ['DEBUG_VALUE'] == 'TRUE'
 
 ALLOWED_HOSTS = ['randomrecipegenerator.herokuapp.com']
-git 
+\
 
 # Application definition
 
