@@ -83,16 +83,16 @@ for x in macronutrients:
 
 
 
-protein,carbs,fat,calories= macronutrients[0].split('|')
+#protein,carbs,fat,calories= macronutrients[0].split('|')
 
-#for x in range(35):
+for x in range(35):
 	
-	#protein,carbs,fat,calories= macronutrients[x].split('|')
+	protein,carbs,fat,calories= macronutrients[x].split('|')
 	
 
-	#recipe_data[x][f'Recipe {x+1}']= recipe_name[x]
-	#recipe_data[x][f'Calories']= calories
-	#recipe_data[x][f'Fat']= fat
-	#recipe_data[x][f'Carbohydrates']= carbs
-	#recipe_data[x][f'Protein']= protein
-	#recipe_data[x][f'Link {x+1}'] = url[x]
+	recipe_data[x][f'Recipe {x+1}']= recipe_name[x]
+	recipe_data[x][f'Calories']= calories
+	recipe_data[x][f'Fat']= fat
+	recipe_data[x][f'Carbohydrates']= carbs
+	recipe_data[x][f'Protein']= protein
+	recipe_data[x][f'Link {x+1}'] = url[x]

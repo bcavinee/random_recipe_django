@@ -25,4 +25,4 @@ class contact_form(forms.Form):
 
 	email= forms.CharField(label="Email")
 	subject= forms.CharField(label="Subject")
-	message= forms.CharField(label="Message")
+	message= forms.CharField(label="Message", widget=forms.Textarea(attrs={'rows':3,'cols' : 10}))

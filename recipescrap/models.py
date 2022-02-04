@@ -14,4 +14,3 @@ class recipes(models.Model):
 
 
 
-

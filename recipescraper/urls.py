@@ -18,7 +18,7 @@ from django.urls import path, include
 from recipescrap import views as recipescrap_views
 
 urlpatterns = [
- 
+    path('contactus/',recipescrap_views.contact_us, name='contactus'),
     path('recipedata/',recipescrap_views.displayrecipe,name="displayrecipe"),
     path('', include('recipescrap.urls')),
     path('admin/', admin.site.urls),

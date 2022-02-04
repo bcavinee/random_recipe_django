@@ -13,7 +13,7 @@
 
 <body>
 
-	<!-- -->
+
 
 
 	<!--<a href="{% url 'displayrecipe' %}" class='displaylink' target="blank">Please Pick A Recipe For Me</a>-->
@@ -41,14 +41,14 @@
 			</div>
 		</div>
 	</nav>	
-				
+			<!-- <div class="row align-items-center" style="height:420px"> -->
 	<div class="container">
-		<div class="row align-items-center" style="height:420px">
+		<div class="row align-items-center">
 			<div class="col">
 		
 			</div>
-			<div class="col-4">
-				<p class="text-start lead " >Do you enjoy the arduous task of choosing what is for dinner every night? Enjoy potential relationship ending arguments over what to eat tonight? If this is you, feel free to exit the browser and go back to the fighting. For the rest of us, hit the button below and take the thinking out of what to make for dinner tonight.</p>
+			<div class="col-lg-4  mb-5">
+				<p class="text-start lead" >Do you enjoy the arduous task of choosing what is for dinner every night? Enjoy potential relationship ending arguments over what to eat tonight? If this is you, feel free to exit the browser and go back to the fighting. For the rest of us, hit the button below and take the thinking out of what to make for dinner tonight.</p>
 				<a class="btn btn-success" href="{% url 'displayrecipe' %}" target="_blank">Find Me A Recipe</a>
 			</div>
 			<div class="col">
@@ -60,8 +60,15 @@
 			<div class="col">
 				
 			</div>
-			<div class="col">
 
+			<div class="col">
+				{% for message in messages %}
+				<div class="container-fluid p-0">
+						<div class="alert {{ message.tags }} alert-dismissible" role="alert" id="message_container" >
+								{{ message }}
+						</div>
+				</div>
+				{% endfor %}	
 			</div>
 			<div class="col">
 				
@@ -72,7 +79,7 @@
 			<div class="col">
 				
 			</div>
-			<div class="col-4">
+			<div class="col-lg-4">
 				<h5 class="text-start">Need A Calorie/Macronutrient Specific Recipe?</h5>
 				<form method="POST">
 					{% csrf_token %}
@@ -95,20 +102,12 @@
 					<div class="input-group mb-3">
 						{{ form.protein_min|as_crispy_field }}
 						{{ form.protein_max|as_crispy_field }}
-						<input class="btn btn-success" type="submit" value="Submit">
+						
 					</div>
-					
-					  
-					{% for message in messages %}
-					<div class="container-fluid p-0">
-					  <div class="alert {{ message.tags }} alert-dismissible" role="alert" id="message_container" >
-					    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-					      <span aria-hidden="True">&times;</span>
-					    </button>
-					    {{ message }}
-					  </div>
+					<div class="col">
+						<input class="btn btn-success" type="submit" value="Submit" name='form'>
 					</div>
-					{% endfor %}									
+					 								
 				</form>
 			
 			</div>
@@ -119,40 +118,42 @@
 			
 			</div>
 			<div class="col">
-				<form class="POST">
-					
-					{{ form_two }}
-				</form>
+
 			</div>
 		</div>
 
-	
+	  
 	</div>
 	<div class="container">
-		<div class="row" style="height:79.8vh">
+		<div class="row" style="height:50vh">
 			<div class="col">
 
 			</div>
 			
 		</div>
 	</div>
-
 	<div class="container-fluid">
 		<div class="row align-items-center" id="image_row">
-			<div class="col-4">
+			<div class="col-md-4">
 				<img src="{% static 'recipescrap/images/rrglogo.jpeg' %}" width="250px" class="rounded mx-auto d-block pt-5" >
 				<p class="text-start lead pt-5" >
 					Choosing what is for dinner can be hassle when you are not trying to diet.  Add a diet to the mix where every caloire or gram of protein counts only compounds the problem.  Thats why Random Recipe Generator has a added function of choosing specific calorie or macronutrient needs. 
 				</p>
 			</div>
-			<div class="col-4">
+			<div class="col-md-4">
 				<img src="{% static 'recipescrap/images/databaseicon.png' %}" width="250px" class="rounded mx-auto d-block " >
 				<p class="text-start lead pt-5" >
 					Random Recipe Generator pulls from various websites.  Our database is always growing to provide an expansive selection of recipes meeting any calorie or macronutrient need you might have. 
 				</p>
 			</div>
-			<div class="col-4">
-
+			<div class="col-md-4">
+				<h4 class="text-start">Contact Us</h4>
+				<p>Any ideas or concerns you may have feel free to message us.</p>
+				<form method="POST">
+					{% csrf_token %}
+					{{ form_two|crispy}}
+				<input class="btn btn-success" type="submit" value="Submit" name='form_two'>	
+				</form>
 			</div>
 		</div>
 	</div>
@@ -163,7 +164,7 @@
 
 	setTimeout(function(){ 
 	   message_ele.style.display = "none"; 
-	}, 5000);		
+	}, 8000);		
 
 	</script>
 </body>
