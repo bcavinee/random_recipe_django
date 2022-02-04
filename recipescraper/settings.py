@@ -27,7 +27,7 @@ SECRET_KEY= os.environ.get("SECRET_KEY_SCRAPER")
 DEBUG = True
 
 ALLOWED_HOSTS = ['randomrecipegenerator.herokuapp.com']
-git 
+
 
 # Application definition
 
