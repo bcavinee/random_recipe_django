@@ -55,7 +55,9 @@ def index(request):
                 message= form_two.cleaned_data['message']
 
                 send_mail(subject,message + f"\n\nThis email was sent from {email}",email,['randomrecipegenerator@gmail.com'], fail_silently=False)
+                messages.success(request,"Email Sent")
                 form_two=contact_form()
+                return redirect('index')
                 
     else:
         form=macro_calorie_form()
