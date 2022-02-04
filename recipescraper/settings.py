@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY= os.environ.get("SECRET_KEY_SCRAPER") 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ['DEBUG_VALUE'] == 'TRUE'
+DEBUG = True
 
 ALLOWED_HOSTS = ['randomrecipegenerator.herokuapp.com']
 git 
