@@ -3,7 +3,7 @@ import requests
 import random
 import unicodedata
 
-url= 'https://mealpreponfleek.com/35-macro-friendly-meal-prep-recipes/'
+
 result= requests.get(url)
 
 doc= BeautifulSoup(result.text,'html.parser')
