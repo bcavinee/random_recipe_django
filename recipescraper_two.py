@@ -3,7 +3,7 @@ import requests
 import random
 import unicodedata
 
-url= 'https://healthyeater.com/protein-macro-friendly-meals'
+
 result= requests.get(url)
 
 doc= BeautifulSoup(result.text,'html.parser')
